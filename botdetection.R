@@ -7,13 +7,13 @@ library(xml2)
 library(RJSONIO)
 
 ## botometer key
-Mashape_key = "4C7f3PJdnLmshITTJoq7wGE9bJoQp1LLwlzjsnBisPv4P720To"
+Mashape_key = "API_KEY"
 
 ## twitter information
-consumer_key = "a6yzKfwnoZdClaN4iwSlV8pWs"
-consumer_secret = "tgQxc6GLhDGcpt32pyiOriixSvR4CpH4VubJyWvYpYlQpjL3oy"
-access_token = "2766685437-Sb1rJKidcnoNaI1igr50Ob3xU4z9SKdq78vLwKG"
-access_secret = "RhwITCLXtO1eubcni0g6YZwuW6zYGRjngjYikM1morU8I"
+consumer_key = "API_KEY"
+consumer_secret = "SECRET"
+access_token = "TOKEN"
+access_secret = "SECRET"
 
 twitter_bot_app = oauth_app("twitter_bot_app", key=consumer_key, secret=consumer_secret)
 sig = sign_oauth1.0(twitter_bot_app, token=access_token, token_secret=access_secret)
