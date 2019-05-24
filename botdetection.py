@@ -12,15 +12,22 @@ bom = botometer.Botometer(wait_on_ratelimit=True,
                           **twitter_app_auth)
 
 
-index = 1597
+index = 1
+with open('63bots.csv', 'wb') as botfile:
+    headers = ['user', 'index']
+    writer = csv.writer(botfile)
+    writer.writerow(headers)
+botfile.close()
+
 
 trollbots = set()
 notTrollbots = set()
-with open('/Users/Ajay/Downloads/10.csv') as csvfile:
+with open('63.csv') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
+        index += 1
         if row['user'] in trollbots:
-            with open('/Users/Ajay/Desktop/Apps/Bot Detection/10bots.csv', 'a') as botfile:
+            with open('63bots.csv', 'a') as botfile:
                 out = [row['user'], index]
                 writer = csv.writer(botfile)
                 writer.writerow(out)
@@ -33,11 +40,8 @@ with open('/Users/Ajay/Downloads/10.csv') as csvfile:
             except:
                 continue
             if result >= 0.7:
-                with open('/Users/Ajay/Desktop/Apps/Bot Detection/10bots.csv', 'a') as botfile:
+                with open('63bots.csv', 'a') as botfile:
                     out = [row['user'], index]
                     writer = csv.writer(botfile)
                     writer.writerow(out)
                 botfile.close()
-            
-        print index
-        index += 1
